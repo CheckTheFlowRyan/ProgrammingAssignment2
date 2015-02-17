@@ -1,8 +1,10 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
-
+## makeCacheMatrix
+## function takes a matrix as argument or creates a 2x2 identiy matrix by default
+## it defines 4 inner fuctions to set/get the original matrix given as argument
+## and to setinverse/getinverse to set or get an inverse matrix
 makeCacheMatrix <- function(x = matrix( c(1,0,0,1), nrow=2) ) {
   ## 'x' is a quadratic, invertible matrix or the identitymatrix by default
   
@@ -26,7 +28,10 @@ makeCacheMatrix <- function(x = matrix( c(1,0,0,1), nrow=2) ) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve
+## takes a makeCacheMatrix as argument. It tries to retrive the inverse. If it exists it returns the already 
+## calculated inverse. If NULL was returned by makeCacheMatrix$getInverse it will calculate the inverse and
+## store it in makeCacheMatrix.
 
 cacheSolve <- function(mcm, ...) {
   ## 'mcm' is a makeCacheMatrix object
